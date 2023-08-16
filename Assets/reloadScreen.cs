@@ -10,6 +10,6 @@ public class reloadScreen : MonoBehaviour
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
-        Debug.Log("i="+currentSceneIndex);
+        
     }
 }

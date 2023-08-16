@@ -6,9 +6,12 @@ using UnityEngine.UI;
 
 public class SceneSwitcher : MonoBehaviour
 {
-    public string targetSceneName; 
+    
     public AudioSource audioSource;
     public static SceneSwitcher Instance;
+    public GameObject GamePlayscreen;
+    public GameObject MenuScreen;
+    
 
     private void Awake()
     {
@@ -32,6 +35,8 @@ public class SceneSwitcher : MonoBehaviour
     private IEnumerator ActivateImageDelayed()
     {    
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(targetSceneName);
+        MenuScreen.SetActive(false);
+        GamePlayscreen.SetActive(true);
+        
     }
 }

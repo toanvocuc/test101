@@ -44,14 +44,7 @@ public class SaveButton : MonoBehaviour
 
 
     }
-
-    public void OnShowButton()
-    {
-       
-        SceneSwitcher.Instance.targetSceneName = SaveScreen;
-        SceneSwitcher.Instance.SwitchScene();
-    }
-
+    
     private void OnLoadData()
     {
         if (PlayerPrefs.HasKey("SavedAnimalID"))
