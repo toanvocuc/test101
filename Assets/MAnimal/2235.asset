@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c77f4b35319f09245b467c34a8043722, type: 3}
+  m_Name: 2235
+  m_EditorClassIdentifier: 
+  Id: 2235
+  MearchAnimalName: The Haunted Tree
+  Star: 8
+  Description: 'The tree grow on the dead spirit drinking life and horrow from the
+    living world. this tree is being hunt down by the fire of life '
+  MearchAnimalImage: {fileID: 21300000, guid: 0ae0009798f48a44fb3b42b26a37f2a0, type: 3}

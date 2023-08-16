@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c77f4b35319f09245b467c34a8043722, type: 3}
+  m_Name: 2655
+  m_EditorClassIdentifier: 
+  Id: 2655
+  MearchAnimalName: Deep Sea Fire
+  Star: 8
+  Description: deep deep under the Ocean where nothing can be reached there is a
+    fire swim around looking for some thing. It burn every thing on it path event
+    it self
+  MearchAnimalImage: {fileID: 21300000, guid: 557f2fa176a61204e934c01e5f001813, type: 3}

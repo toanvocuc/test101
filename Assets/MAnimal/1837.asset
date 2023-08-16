@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c77f4b35319f09245b467c34a8043722, type: 3}
+  m_Name: 1837
+  m_EditorClassIdentifier: 
+  Id: 1837
+  MearchAnimalName: Shock uniCorn
+  Star: 5
+  Description: This unicorn live in the cave of the hight Efd mountain to protect
+    the antifact in side the mountain.
+  MearchAnimalImage: {fileID: 21300000, guid: b4933376409842b4298d4ec98b43839c, type: 3}

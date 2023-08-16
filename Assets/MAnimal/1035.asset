@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c77f4b35319f09245b467c34a8043722, type: 3}
+  m_Name: 1035
+  m_EditorClassIdentifier: 
+  Id: 1035
+  MearchAnimalName: Chearh
+  Star: 4
+  Description: Eat too many deer The cheetah become 1 of them
+  MearchAnimalImage: {fileID: 21300000, guid: f87f6dd5dd53eb249a5bebe64ce37d05, type: 3}
