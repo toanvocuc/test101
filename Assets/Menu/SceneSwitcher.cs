@@ -16,6 +16,11 @@ public class SceneSwitcher : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        if (reloadScreen.Instance._reLoad)
+        {
+            MenuScreen.SetActive(false);
+            GamePlayscreen.SetActive(true); 
+        }
     }
 
     private void Start()

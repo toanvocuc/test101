@@ -1511,7 +1511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24811111, y: 0.6113126}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -12.44553, y: 392.99963}
+  m_AnchoredPosition: {x: -12.44553, y: 392.99866}
   m_SizeDelta: {x: 24.811218, y: 58.092224}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &421302287
@@ -3402,8 +3402,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1580103884}
   - {fileID: 1086411551}
+  - {fileID: 1580103884}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3750,6 +3750,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53077e8bb15cb4c42b1084228e85c821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MenuScreen: {fileID: 1086411550}
+  GameplayScreen: {fileID: 1580103883}
+  _reLoad: 0
 --- !u!114 &1167971497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4105,6 +4108,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1086411551}
     m_Modifications:
+    - target: {fileID: 5231249637359660834, guid: a6ead04d6c4fb8b469e8c343a2f4210a, type: 3}
+      propertyPath: ManimalName
+      value: 
+      objectReference: {fileID: 1171697412}
     - target: {fileID: 5721301245424014279, guid: a6ead04d6c4fb8b469e8c343a2f4210a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4192,6 +4199,10 @@ PrefabInstance:
     - target: {fileID: 6016456784313955287, guid: a6ead04d6c4fb8b469e8c343a2f4210a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802686425749735421, guid: a6ead04d6c4fb8b469e8c343a2f4210a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnLoadData
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
