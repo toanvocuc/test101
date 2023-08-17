@@ -124,7 +124,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5231249637359660834}
         m_TargetAssemblyTypeName: SaveButton, Assembly-CSharp
-        m_MethodName: OnShowButton
+        m_MethodName: OnLoadData
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

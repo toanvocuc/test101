@@ -1768,7 +1768,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24811111, y: 0.6113126}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -12.44553, y: 392.99792}
+  m_AnchoredPosition: {x: -12.44553, y: 392.9973}
   m_SizeDelta: {x: 24.811218, y: 58.092224}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &421302287
@@ -1871,153 +1871,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5486009734305438884, guid: db92720a5d91618448d541a869decac1, type: 3}
   m_PrefabInstance: {fileID: 96810498}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &462458675
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 462458676}
-  - component: {fileID: 462458679}
-  - component: {fileID: 462458678}
-  - component: {fileID: 462458677}
-  - component: {fileID: 462458680}
-  m_Layer: 5
-  m_Name: Button Spawn Button
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &462458676
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 462458675}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1098835224}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 225}
-  m_SizeDelta: {x: 200, y: 150}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &462458677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 462458675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 462458678}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 462458680}
-        m_TargetAssemblyTypeName: SpawnButton, Assembly-CSharp
-        m_MethodName: AddButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &462458678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 462458675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5299f93593b9d9f479bf9df15f35a40b, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &462458679
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 462458675}
-  m_CullTransparentMesh: 1
---- !u!114 &462458680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 462458675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e50bc8cd77e4414a9dd2560a140899b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollView: {fileID: 163880040}
-  buttonPrefab: {fileID: 5463798628797463899, guid: fed9ff33e51f01f44be9e0c4f6b79ada, type: 3}
 --- !u!224 &515599426 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5721301245424014279, guid: a6ead04d6c4fb8b469e8c343a2f4210a, type: 3}
@@ -3513,9 +3366,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c3750cbe2fab8d4ebc0ca9bb2b76d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ManimalName: {fileID: 0}
-  ManimalImage: {fileID: 0}
-  FirstImage: {fileID: 0}
+  saveScreen: {fileID: 0}
+  menuScreen: {fileID: 0}
+  buttonPrefab: {fileID: 0}
+  spawnParent: {fileID: 0}
 --- !u!1 &1054383452
 GameObject:
   m_ObjectHideFlags: 0
@@ -3531,7 +3385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1054383453
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3734,7 +3588,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1086411551
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3897,7 +3751,6 @@ RectTransform:
   - {fileID: 1086411551}
   - {fileID: 1580103884}
   - {fileID: 1054383453}
-  - {fileID: 462458676}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4603,9 +4456,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 1086411551}
     m_Modifications:
     - target: {fileID: 5231249637359660834, guid: a6ead04d6c4fb8b469e8c343a2f4210a, type: 3}
+      propertyPath: menuScreen
+      value: 
+      objectReference: {fileID: 1086411550}
+    - target: {fileID: 5231249637359660834, guid: a6ead04d6c4fb8b469e8c343a2f4210a, type: 3}
+      propertyPath: saveScreen
+      value: 
+      objectReference: {fileID: 1054383452}
+    - target: {fileID: 5231249637359660834, guid: a6ead04d6c4fb8b469e8c343a2f4210a, type: 3}
       propertyPath: ManimalName
       value: 
       objectReference: {fileID: 1171697412}
+    - target: {fileID: 5231249637359660834, guid: a6ead04d6c4fb8b469e8c343a2f4210a, type: 3}
+      propertyPath: spawnParent
+      value: 
+      objectReference: {fileID: 237260449}
+    - target: {fileID: 5231249637359660834, guid: a6ead04d6c4fb8b469e8c343a2f4210a, type: 3}
+      propertyPath: buttonPrefab
+      value: 
+      objectReference: {fileID: 5463798628797463899, guid: fed9ff33e51f01f44be9e0c4f6b79ada, type: 3}
     - target: {fileID: 5721301245424014279, guid: a6ead04d6c4fb8b469e8c343a2f4210a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4689,10 +4558,6 @@ PrefabInstance:
     - target: {fileID: 6016456784313955287, guid: a6ead04d6c4fb8b469e8c343a2f4210a, type: 3}
       propertyPath: m_Name
       value: Save Animal
-      objectReference: {fileID: 0}
-    - target: {fileID: 6016456784313955287, guid: a6ead04d6c4fb8b469e8c343a2f4210a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6802686425749735421, guid: a6ead04d6c4fb8b469e8c343a2f4210a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName

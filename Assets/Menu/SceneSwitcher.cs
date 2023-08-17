@@ -21,6 +21,10 @@ public class SceneSwitcher : MonoBehaviour
             MenuScreen.SetActive(false);
             GamePlayscreen.SetActive(true); 
         }
+        else
+        {
+            return;
+        }
     }
 
     private void Start()
