@@ -14,7 +14,7 @@ public class SceneSwitcher : MonoBehaviour
     
 
     private void Awake()
-    {
+    { audioSource.Stop();
         Instance = this;
         if (reloadScreen.Instance._reLoad)
         {

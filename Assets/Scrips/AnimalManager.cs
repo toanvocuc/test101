@@ -22,6 +22,7 @@ public class AnimalManager : MonoBehaviour
     public Button confirmButton;
     public Button resetButton;
     public Button SaveButton;
+    public Button backToMenu;
     private animal _chosenAnimal;
     public Image _thirtImage;
   
@@ -41,7 +42,7 @@ public class AnimalManager : MonoBehaviour
 
     public StarManager starManager;
     
-
+    
     private void Start()
     {
         _secondImage.gameObject.SetActive(false);
@@ -127,6 +128,7 @@ public class AnimalManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         SaveButton.gameObject.SetActive(true);
+        backToMenu.gameObject.SetActive(true);
         resetButton.gameObject.SetActive(true);
         _thirtImage.gameObject.SetActive(true);
         MAnimalDescription.gameObject.SetActive((true));

@@ -1,8 +1,6 @@
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,7 +19,10 @@ public class SaveButton : MonoBehaviour
     public GameObject buttonPrefab;
     public Transform spawnParent;
     public mearchAnimal SavedAnimal;
-
+    //combat
+    public Image animalInfoImage;
+    public TMP_Text animalInfoName;
+    public Transform spawnCombatParent;
     private void Awake()
     {
         Instance = this;
@@ -35,7 +36,7 @@ public class SaveButton : MonoBehaviour
         LoadSavedAnimalIds();
 
         if (!_savedAnimalIds.Contains(animalID))
-        {
+        {    PreventSaveButton();
             _savedAnimalIds.Add(animalID);
             SaveAnimalIds();
             Debug.Log("Added new animal ID to the list.");
@@ -43,13 +44,18 @@ public class SaveButton : MonoBehaviour
         else
         {
             Debug.Log("Matching animal ID found.");
-            Button buttonToDisable = GetComponent<Button>();
-            buttonToDisable.interactable = false;
-            ColorBlock colors = buttonToDisable.colors;
-            colors.normalColor = new Color(0.7f, 0.7f, 0.7f, 1.0f);
-            buttonToDisable.colors = colors;
+            PreventSaveButton();
 
         }
+    }
+
+    public void PreventSaveButton()
+    {
+        Button buttonToDisable = GetComponent<Button>();
+        buttonToDisable.interactable = false;
+        ColorBlock colors = buttonToDisable.colors;
+        colors.normalColor = new Color(0.7f, 0.7f, 0.7f, 1.0f);
+        buttonToDisable.colors = colors;
     }
 
     private void LoadSavedAnimalIds()
@@ -69,11 +75,12 @@ public class SaveButton : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public void OnLoadData()
+    public void OnLoadData()//for save menu
     {
         saveScreen.SetActive(true);
+        menuScreen.SetActive(false);
         LoadSavedAnimalIds();
-        
+        SoundManager.Instance.PlaySound("ConfirmButtonClick");
         if (_savedAnimalIds.Count == 0)
         {
             Debug.Log("No saved animals found.");
@@ -90,27 +97,60 @@ public class SaveButton : MonoBehaviour
             }
         }
 
-        menuScreen.SetActive(false);
+        
         
     }
 
-    private void SpawnButtonWithSprite(Sprite sprite)
+    private void SpawnButtonWithSprite(Sprite sprite)// for save menu 
     {    
         
         GameObject newButton = Instantiate(buttonPrefab, spawnParent);
         Image buttonImage = newButton.GetComponent<Image>();
-        // newButton.name = 
-
         if (buttonImage != null)
         {
             buttonImage.sprite = sprite;
         }
     }
+    
+    private void SpawnButtonWithAnimal(mearchAnimal animal)//for combat
+    {
+        GameObject newButton = Instantiate(buttonPrefab, spawnCombatParent);
+        // Attach AnimalButton script and store associated animal
+        SaveData animalButton = newButton.AddComponent<SaveData>();
+        animalButton.associatedAnimal = animal;
+    }
+
+    public void OnLoadDataForBattle()// for combat
+    {
+        saveScreen.SetActive(false);
+        menuScreen.SetActive(false);
+        LoadSavedAnimalIds();
+    
+        if (_savedAnimalIds.Count == 0)
+        {
+            Debug.Log("No saved animals found.");
+            return;
+        }
+
+        foreach (int savedAnimalId in _savedAnimalIds)
+        {
+            SavedAnimal = AnimalManager.Instance.GetAnimalById(savedAnimalId);
+            if (SavedAnimal != null)
+            {
+                savedAnimals.Add(SavedAnimal);
+                SpawnButtonWithAnimal(SavedAnimal);
+            }
+        }
+
+       
+    }
+    
 
     public List<mearchAnimal> GetSavedAnimals()
     {
         return savedAnimals;
     }
+    
 }
 
     

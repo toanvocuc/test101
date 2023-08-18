@@ -7,11 +7,11 @@ using UnityEngine.UI;
 public class OnClicksaveAnim : MonoBehaviour
 {
    
-    [SerializeField] private TMP_Text animalName;
-    private mearchAnimal _savedAnimal;
-    public void OnViewSaved()
-    {
-        List<mearchAnimal> savedAnimalsList = SaveButton.Instance.GetSavedAnimals();
-        int numberOfChildren = transform.childCount; 
-    }
+    // [SerializeField] private TMP_Text animalName;// later
+    // private mearchAnimal _savedAnimal;
+    // public void OnViewSaved()
+    // {
+    //     List<mearchAnimal> savedAnimalsList = SaveButton.Instance.GetSavedAnimals();
+    //     int numberOfChildren = transform.childCount; 
+    // }
 }
