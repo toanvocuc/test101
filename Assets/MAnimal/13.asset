@@ -15,5 +15,5 @@ MonoBehaviour:
   Id: 13
   MearchAnimalName: fly Alpaca
   Star: 1
-  Description: bring doom to all
+  Description: nice and cozy
   MearchAnimalImage: {fileID: 21300000, guid: cbdb43b6a63b5a449a9ef484f003c34f, type: 3}

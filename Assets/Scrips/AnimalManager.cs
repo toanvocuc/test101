@@ -18,6 +18,7 @@ public class AnimalManager : MonoBehaviour
     
     public Image _chosenImage;
     public Image _secondImage;
+    public Image _Mearch3Image;
     
     public Button confirmButton;
     public Button resetButton;
@@ -28,6 +29,7 @@ public class AnimalManager : MonoBehaviour
   
     public Animator dadAnimator;
     public Animator momAnimator;
+    public Animator mearch3animator;
 
     public GameObject ScrollView;
     
@@ -78,12 +80,25 @@ public class AnimalManager : MonoBehaviour
         }
 
         if (_onClickNumber>=2)
-        {    SoundManager.Instance.StopSound("BackGroundMusic");
-            SoundManager.Instance.PlaySound("Phase3Music");
-            Phase3Tranfer();
-            CalculateSumOfIds();
-            Debug.Log("sum later:"+_sum);
-            FindIdMAnimal();
+        {
+            if (SceneSwitcher.Instance.GameMode)
+            {
+                SoundManager.Instance.StopSound("BackGroundMusic");
+                SoundManager.Instance.PlaySound("Phase3Music");
+                Phase3Tranfer();
+                CalculateSumOfIds();
+                Debug.Log("sum later:"+_sum);
+                FindIdMAnimal();
+                _chosenAnimal.gameObject.SetActive(false);
+            }
+            else
+            
+            {   CalculateSumOfIds();
+                FindIdMAnimal();
+                Debug.Log("sum later:"+_sum);
+                Phase4Tranfer();
+            }
+            
         }
 
         if (_onClickNumber != 2 && _onClickNumber != 1) return;
@@ -124,6 +139,15 @@ public class AnimalManager : MonoBehaviour
         StartCoroutine(ActivateImageDelayed());
 
     }
+
+    private void Phase4Tranfer()
+    {
+        confirmButton.gameObject.SetActive(false);
+        momAnimator.Play("Tofash4");
+        _Mearch3Image.gameObject.SetActive(true);
+        mearch3animator.Play("Idle");
+       
+    }
     private IEnumerator ActivateImageDelayed()
     {
         yield return new WaitForSeconds(2f);
@@ -147,6 +171,7 @@ public class AnimalManager : MonoBehaviour
                 MAnimalname.text = t.MearchAnimalName;
             }
         }
+        
         
     }
 

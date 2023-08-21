@@ -1,37 +1,17 @@
-using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
-public class SceneSwitcher : MonoBehaviour
+public class create3animalButton : MonoBehaviour
 {
-    
     public AudioSource audioSource;
-    public static SceneSwitcher Instance;
     public GameObject GamePlayscreen;
     public GameObject MenuScreen;
-    public bool GameMode ;
-
-    private void Awake()
-    { audioSource.Stop();
-        Instance = this;
-        if (reloadScreen.Instance._reLoad)
-        {
-            MenuScreen.SetActive(false);
-            GamePlayscreen.SetActive(true); 
-        }
-        else
-        {
-            return;
-        }
-    }
-
+   
     private void Start()
     {
         audioSource.Stop();
     }
-
     public void SwitchScene()
     { if (audioSource != null)
         {
@@ -39,7 +19,7 @@ public class SceneSwitcher : MonoBehaviour
            
         }
         StartCoroutine(ActivateImageDelayed());
-        GameMode = true;
+        SceneSwitcher.Instance.GameMode = false;
 
     }
     private IEnumerator ActivateImageDelayed()

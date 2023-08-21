@@ -11,17 +11,21 @@ public class SaveButton : MonoBehaviour
     public static SaveButton Instance;
     public GameObject saveScreen;
     public GameObject menuScreen;
-
+    public GameObject comBatScreen;
+    //list save
     private mearchAnimal _cureentanimal;
     private List<int> _savedAnimalIds = new List<int>();
     private List<mearchAnimal> savedAnimals = new List<mearchAnimal>();
-
+    //save
     public GameObject buttonPrefab;
     public Transform spawnParent;
     public mearchAnimal SavedAnimal;
     //combat
-    public Image animalInfoImage;
-    public TMP_Text animalInfoName;
+    public Sprite battleStar;
+    // public Image animalInfoImage;
+    // public TMP_Text animalInfoName;
+    // public GameObject star;
+    
     public Transform spawnCombatParent;
     private void Awake()
     {
@@ -31,13 +35,13 @@ public class SaveButton : MonoBehaviour
     public void OnSaveButton()
     {
         mearchAnimal saveAnimal = AnimalManager.Instance.CurrentManimal();
-        int animalID = saveAnimal.Id;
+        int animalId = saveAnimal.Id;
 
         LoadSavedAnimalIds();
 
-        if (!_savedAnimalIds.Contains(animalID))
+        if (!_savedAnimalIds.Contains(animalId))
         {    PreventSaveButton();
-            _savedAnimalIds.Add(animalID);
+            _savedAnimalIds.Add(animalId);
             SaveAnimalIds();
             Debug.Log("Added new animal ID to the list.");
         }
@@ -115,15 +119,20 @@ public class SaveButton : MonoBehaviour
     private void SpawnButtonWithAnimal(mearchAnimal animal)//for combat
     {
         GameObject newButton = Instantiate(buttonPrefab, spawnCombatParent);
-        // Attach AnimalButton script and store associated animal
         SaveData animalButton = newButton.AddComponent<SaveData>();
-        animalButton.associatedAnimal = animal;
+
+        // Pass the required references to the SaveData component
+        animalButton.animalName = newButton.GetComponentInChildren<TMP_Text>();
+
+        // Initialize the associated animal
+        animalButton.Initialize(animal);
     }
 
     public void OnLoadDataForBattle()// for combat
     {
         saveScreen.SetActive(false);
         menuScreen.SetActive(false);
+        comBatScreen.SetActive(true);
         LoadSavedAnimalIds();
     
         if (_savedAnimalIds.Count == 0)

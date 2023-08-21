@@ -19,7 +19,7 @@ public class animal : MonoBehaviour
     private AnimalManager _animalManager;
     public Image _chosenImage;
     public Image _secondImage;
-    
+    public Image _Mearch3image;
     private void Awake()
     {
         _animalManager = FindObjectOfType<AnimalManager>();
@@ -43,24 +43,48 @@ public class animal : MonoBehaviour
         
         nameHolder.text = animalName;
         Debug.Log("clicknumb"+clickNum);
-        
-        if (clickNum == 1)
-        {     
-            nameHolder.text = "chose the mom";
-            _secondImage.sprite = animalImage.sprite;
-            conFirmButton.gameObject.SetActive(true);
-            nameHolder.text = animalName;
+        if (SceneSwitcher.Instance.GameMode)
+        {
+            if (clickNum == 1)
+            {     
+                nameHolder.text = "chose the mom";
+                _secondImage.sprite = animalImage.sprite;
+                conFirmButton.gameObject.SetActive(true);
+                nameHolder.text = animalName;
+            }
+            else
+            {
+                _chosenImage.sprite = animalImage.sprite;
+                conFirmButton.gameObject.SetActive(true); 
+           
+            }
         }
         else
         {
-            _chosenImage.sprite = animalImage.sprite;
-            conFirmButton.gameObject.SetActive(true); 
-        }
+            if (clickNum == 1)
+            {     
+                nameHolder.text = "chose the mom";
+                _secondImage.sprite = animalImage.sprite;
+                conFirmButton.gameObject.SetActive(true);
+                nameHolder.text = animalName;
+            }
+            if(clickNum<1)
+            {
+                _chosenImage.sprite = animalImage.sprite;
+                conFirmButton.gameObject.SetActive(true); 
+           
+            }
 
-        if (clickNum >= 1)
-        {
-            
+            if (clickNum > 1)
+            {
+                _Mearch3image.sprite = animalImage.sprite;
+                conFirmButton.gameObject.SetActive(true);
+                
+            }
         }
+       
+
+       
        
         
     }
