@@ -18,6 +18,12 @@ public class SceneSwitcher : MonoBehaviour
         Instance = this;
         GameMode = PlayerPrefs.GetInt("GameMode", 0) == 1;
         
+        
+    }
+
+    private void Start()
+    {
+        audioSource.Stop();
         if (reloadScreen.Instance._reLoad)
         {
             MenuScreen.SetActive(false);
@@ -27,11 +33,6 @@ public class SceneSwitcher : MonoBehaviour
         {
             return;
         }
-    }
-
-    private void Start()
-    {
-        audioSource.Stop();
     }
 
     public void SwitchScene()

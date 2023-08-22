@@ -30,7 +30,7 @@ RectTransform:
   m_GameObject: {fileID: 346452814223454632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.816295, y: 5.02974, z: 2.7943}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4671510263160719504}
@@ -147,8 +147,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 484adc09a96c69646abb3c58fb3838b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneName: GamePlay
   audioSource: {fileID: 3158891435362286394}
+  GamePlayscreen: {fileID: 0}
+  MenuScreen: {fileID: 0}
+  GameMode: 0
 --- !u!82 &3158891435362286394
 AudioSource:
   m_ObjectHideFlags: 0
@@ -169,7 +171,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.69216764
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0

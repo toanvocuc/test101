@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class AnimalManager : MonoBehaviour
@@ -13,41 +14,40 @@ public class AnimalManager : MonoBehaviour
     private List<int> _idAnimal= new List<int>();
     public List<mearchAnimal> mearchanimals = new List<mearchAnimal>();
     
-    public TMP_Text MAnimalDescription;
-    public TMP_Text MAnimalname;
+    public TMP_Text mAnimalDescription;
+    public TMP_Text mAnimalname;
     
-    public Image _chosenImage;
-    public Image _secondImage;
-    public Image _Mearch3Image;
+     public Image chosenImage;
+     public Image secondImage;
+     public Image mearch3Image;
+     public Image thirtImage;
     
     public Button confirmButton;
     public Button resetButton;
-    public Button SaveButton;
+    public Button saveButton;
     public Button backToMenu;
     private animal _chosenAnimal;
-    public Image _thirtImage;
+    
   
     public Animator dadAnimator;
     public Animator momAnimator;
-    public Animator mearch3animator;
+   public Animator mearch3Animator;
 
     public GameObject ScrollView;
+    public GameObject StarHolder;
     
     private mearchAnimal _currentMearchAnimal;
-     
+    public StarManager starManager;
 
     private int _onClickNumber;
-    private int _sum = 0;
+    private int _sum ;
 
-    public GameObject StarHolder;
-
-
-    public StarManager starManager;
+    
     
     
     private void Start()
     {
-        _secondImage.gameObject.SetActive(false);
+        secondImage.gameObject.SetActive(false);
         SoundManager.Instance.PlaySound("BackGroundMusic");
     }
 
@@ -75,7 +75,7 @@ public class AnimalManager : MonoBehaviour
             confirmButton.gameObject.SetActive(false);
             dadAnimator.Play("TranferPict");
                 
-            _chosenImage.sprite = _chosenAnimal.animalSprite;
+            chosenImage.sprite = _chosenAnimal.animalSprite;
             _chosenAnimal.gameObject.SetActive(false);
         }
 
@@ -107,14 +107,14 @@ public class AnimalManager : MonoBehaviour
             Debug.Log("sum later:"+_sum);
             SoundManager.Instance.StopSound("BackGroundMusic");
             SoundManager.Instance.PlaySound("Phase3Music");
-            mearch3animator.Play("Mearch");
+            mearch3Animator.Play("Mearch");
             dadAnimator.Play("mearch");
             momAnimator.Play("Fashe4Mearch");
            Phase3Tranfer();
         }
 
         if (_onClickNumber != 2 && _onClickNumber != 1) return;
-        _secondImage.gameObject.SetActive(true);
+        secondImage.gameObject.SetActive(true);
         momAnimator.Play("tranfer");
     }
 
@@ -146,8 +146,8 @@ public class AnimalManager : MonoBehaviour
         dadAnimator.Play("mearch");
         momAnimator.Play("Mearch");
                 
-        Destroy(_chosenImage,2f);
-        Destroy(_secondImage,2f);
+        Destroy(chosenImage,2f);
+        Destroy(secondImage,2f);
         StartCoroutine(ActivateImageDelayed());
 
     }
@@ -156,19 +156,19 @@ public class AnimalManager : MonoBehaviour
     {
         confirmButton.gameObject.SetActive(false);
         momAnimator.Play("Tofash4");
-        _Mearch3Image.gameObject.SetActive(true);
-        mearch3animator.Play("Idle");
+        mearch3Image.gameObject.SetActive(true);
+        mearch3Animator.Play("Idle");
        
     }
     private IEnumerator ActivateImageDelayed()
     {
         yield return new WaitForSeconds(2f);
-        _Mearch3Image.gameObject.SetActive(false);
-        SaveButton.gameObject.SetActive(true);
+        mearch3Image.gameObject.SetActive(false);
+        saveButton.gameObject.SetActive(true);
         backToMenu.gameObject.SetActive(true);
         resetButton.gameObject.SetActive(true);
-        _thirtImage.gameObject.SetActive(true);
-        MAnimalDescription.gameObject.SetActive((true));
+        thirtImage.gameObject.SetActive(true);
+        mAnimalDescription.gameObject.SetActive((true));
         StarHolder.SetActive((true));
         starManager.AddStars();
     }
@@ -179,9 +179,9 @@ public class AnimalManager : MonoBehaviour
         {
             if (_sum == t.Id)
             {    Debug.Log(t.Id);
-                _thirtImage.sprite = t.MearchAnimalImage;
-                MAnimalDescription.text = t.Description;
-                MAnimalname.text = t.MearchAnimalName;
+                thirtImage.sprite = t.MearchAnimalImage;
+                mAnimalDescription.text = t.Description;
+                mAnimalname.text = t.MearchAnimalName;
             }
         }
         

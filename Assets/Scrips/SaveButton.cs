@@ -11,22 +11,9 @@ public class SaveButton : MonoBehaviour
     public static SaveButton Instance;
     public GameObject saveScreen;
     public GameObject menuScreen;
-    public GameObject comBatScreen;
     //list save
-    private mearchAnimal _cureentanimal;
-    private List<int> _savedAnimalIds = new List<int>();
-    private List<mearchAnimal> savedAnimals = new List<mearchAnimal>();
-    //save
-    public GameObject buttonPrefab;
-    public Transform spawnParent;
-    public mearchAnimal SavedAnimal;
-    //combat
-    public Sprite battleStar;
-    // public Image animalInfoImage;
-    // public TMP_Text animalInfoName;
-    // public GameObject star;
-    
-    public Transform spawnCombatParent;
+    public List<int> _savedAnimalIds = new List<int>();
+    private List<mearchAnimal> _savedAnimals = new List<mearchAnimal>();
     private void Awake()
     {
         Instance = this;
@@ -62,7 +49,7 @@ public class SaveButton : MonoBehaviour
         buttonToDisable.colors = colors;
     }
 
-    private void LoadSavedAnimalIds()
+    public void LoadSavedAnimalIds()
     {
 
         string savedData = PlayerPrefs.GetString("SavedAnimalIds", "");
@@ -79,87 +66,17 @@ public class SaveButton : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public void OnLoadData()//for save menu
+    /// <summary>
+    /// oly for save button ;
+    /// </summary>
+    public void OnLoadData() //for load saved screen
     {
         saveScreen.SetActive(true);
         menuScreen.SetActive(false);
-        LoadSavedAnimalIds();
+
         SoundManager.Instance.PlaySound("ConfirmButtonClick");
-        if (_savedAnimalIds.Count == 0)
-        {
-            Debug.Log("No saved animals found.");
-            return;
-        }
-
-        foreach (int savedAnimalId in _savedAnimalIds)
-        {
-            SavedAnimal = AnimalManager.Instance.GetAnimalById(savedAnimalId);
-            if (SavedAnimal != null)
-            {     savedAnimals.Add(SavedAnimal);
-                SpawnButtonWithSprite(SavedAnimal.MearchAnimalImage);
-
-            }
-        }
-
-        
-        
-    }
-
-    private void SpawnButtonWithSprite(Sprite sprite)// for save menu 
-    {    
-        
-        GameObject newButton = Instantiate(buttonPrefab, spawnParent);
-        Image buttonImage = newButton.GetComponent<Image>();
-        if (buttonImage != null)
-        {
-            buttonImage.sprite = sprite;
-        }
-    }
-    
-    private void SpawnButtonWithAnimal(mearchAnimal animal)//for combat
-    {
-        GameObject newButton = Instantiate(buttonPrefab, spawnCombatParent);
-        SaveData animalButton = newButton.AddComponent<SaveData>();
-
-        // Pass the required references to the SaveData component
-        animalButton.animalName = newButton.GetComponentInChildren<TMP_Text>();
-
-        // Initialize the associated animal
-        animalButton.Initialize(animal);
-    }
-
-    public void OnLoadDataForBattle()// for combat
-    {
-        saveScreen.SetActive(false);
-        menuScreen.SetActive(false);
-        comBatScreen.SetActive(true);
         LoadSavedAnimalIds();
-    
-        if (_savedAnimalIds.Count == 0)
-        {
-            Debug.Log("No saved animals found.");
-            return;
-        }
-
-        foreach (int savedAnimalId in _savedAnimalIds)
-        {
-            SavedAnimal = AnimalManager.Instance.GetAnimalById(savedAnimalId);
-            if (SavedAnimal != null)
-            {
-                savedAnimals.Add(SavedAnimal);
-                SpawnButtonWithAnimal(SavedAnimal);
-            }
-        }
-
-       
     }
-    
-
-    public List<mearchAnimal> GetSavedAnimals()
-    {
-        return savedAnimals;
-    }
-    
 }
 
     

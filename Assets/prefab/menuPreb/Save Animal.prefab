@@ -29,7 +29,7 @@ RectTransform:
   m_GameObject: {fileID: 6016456784313955287}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6749407, y: 5.3598104, z: 5.3598104}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 564548781724901854}
@@ -146,9 +146,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c3750cbe2fab8d4ebc0ca9bb2b76d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ManimalName: {fileID: 0}
-  ManimalImage: {fileID: 0}
-  FirstImage: {fileID: 0}
+  saveScreen: {fileID: 0}
+  menuScreen: {fileID: 0}
+  comBatScreen: {fileID: 0}
+  buttonPrefab: {fileID: 5463798628797463899, guid: fed9ff33e51f01f44be9e0c4f6b79ada, type: 3}
+  spawnParent: {fileID: 0}
+  SavedAnimal: {fileID: 0}
+  battleStar: {fileID: 0}
+  spawnCombatParent: {fileID: 0}
 --- !u!1 &7252019938019217462
 GameObject:
   m_ObjectHideFlags: 0
