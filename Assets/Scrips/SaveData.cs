@@ -13,11 +13,8 @@ public class SaveData : MonoBehaviour
      public TMP_Text animalName;
      
     public mearchAnimal associatedAnimal;
-    public Image _starIcon;
     private int _animalStars;
-    private Image battleAnimalImage1;
-    private Image battleAnimalImage2;
-    private Image battleAnimalImage3;
+   
  
 
     public void Initialize(mearchAnimal animal)
@@ -26,15 +23,7 @@ public class SaveData : MonoBehaviour
       
        
     }
-    public Image FindImageByName(string name)
-    {
-        return FindObjectOfType<Image>();
-    }
-
-    public void Awake()
-    {
-        
-    }
+    
 
     private void Start()
     {
@@ -44,7 +33,7 @@ public class SaveData : MonoBehaviour
         _animalStars = associatedAnimal.Star * 10;
         animalName.text = _animalStars.ToString();
 
-        // Now you can use the assigned references
+        
        
 
     }

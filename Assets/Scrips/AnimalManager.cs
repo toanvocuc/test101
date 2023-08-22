@@ -79,12 +79,13 @@ public class AnimalManager : MonoBehaviour
             _chosenAnimal.gameObject.SetActive(false);
         }
 
-        if (_onClickNumber>=2)
+        if (_onClickNumber==2)
         {
             if (SceneSwitcher.Instance.GameMode)
             {
                 SoundManager.Instance.StopSound("BackGroundMusic");
                 SoundManager.Instance.PlaySound("Phase3Music");
+              
                 Phase3Tranfer();
                 CalculateSumOfIds();
                 Debug.Log("sum later:"+_sum);
@@ -93,12 +94,23 @@ public class AnimalManager : MonoBehaviour
             }
             else
             
-            {   CalculateSumOfIds();
-                FindIdMAnimal();
-                Debug.Log("sum later:"+_sum);
+            {   _chosenAnimal.gameObject.SetActive(false);
                 Phase4Tranfer();
             }
             
+        }
+
+        if (_onClickNumber > 2)
+            
+        {   CalculateSumOfIds();
+            FindIdMAnimal();
+            Debug.Log("sum later:"+_sum);
+            SoundManager.Instance.StopSound("BackGroundMusic");
+            SoundManager.Instance.PlaySound("Phase3Music");
+            mearch3animator.Play("Mearch");
+            dadAnimator.Play("mearch");
+            momAnimator.Play("Fashe4Mearch");
+           Phase3Tranfer();
         }
 
         if (_onClickNumber != 2 && _onClickNumber != 1) return;
@@ -151,6 +163,7 @@ public class AnimalManager : MonoBehaviour
     private IEnumerator ActivateImageDelayed()
     {
         yield return new WaitForSeconds(2f);
+        _Mearch3Image.gameObject.SetActive(false);
         SaveButton.gameObject.SetActive(true);
         backToMenu.gameObject.SetActive(true);
         resetButton.gameObject.SetActive(true);

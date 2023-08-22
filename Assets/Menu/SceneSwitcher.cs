@@ -16,6 +16,8 @@ public class SceneSwitcher : MonoBehaviour
     private void Awake()
     { audioSource.Stop();
         Instance = this;
+        GameMode = PlayerPrefs.GetInt("GameMode", 0) == 1;
+        
         if (reloadScreen.Instance._reLoad)
         {
             MenuScreen.SetActive(false);
@@ -36,10 +38,11 @@ public class SceneSwitcher : MonoBehaviour
     { if (audioSource != null)
         {
             audioSource.Play();
-           
         }
         StartCoroutine(ActivateImageDelayed());
         GameMode = true;
+        // Save the GameMode value
+        PlayerPrefs.SetInt("GameMode", GameMode ? 1 : 0);
 
     }
     private IEnumerator ActivateImageDelayed()

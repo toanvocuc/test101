@@ -13,14 +13,16 @@ public class create3animalButton : MonoBehaviour
         audioSource.Stop();
     }
     public void SwitchScene()
-    { if (audioSource != null)
+    {  if (audioSource != null)
         {
             audioSource.Play();
-           
         }
         StartCoroutine(ActivateImageDelayed());
+        
+        // Set the GameMode to false
         SceneSwitcher.Instance.GameMode = false;
-
+        // Save the GameMode value
+        PlayerPrefs.SetInt("GameMode", SceneSwitcher.Instance.GameMode ? 1 : 0);
     }
     private IEnumerator ActivateImageDelayed()
     {    
