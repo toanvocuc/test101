@@ -24,6 +24,8 @@ public class SceneSwitcher : MonoBehaviour
     private void Start()
     {
         audioSource.Stop();
+        
+        
         if (reloadScreen.Instance._reLoad)
         {
             MenuScreen.SetActive(false);

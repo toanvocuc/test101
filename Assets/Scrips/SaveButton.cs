@@ -13,7 +13,7 @@ public class SaveButton : MonoBehaviour
     public GameObject menuScreen;
     //list save
     public List<int> _savedAnimalIds = new List<int>();
-    private List<mearchAnimal> _savedAnimals = new List<mearchAnimal>();
+   
     private void Awake()
     {
         Instance = this;
@@ -65,10 +65,6 @@ public class SaveButton : MonoBehaviour
         PlayerPrefs.SetString("SavedAnimalIds", savedData);
         PlayerPrefs.Save();
     }
-
-    /// <summary>
-    /// oly for save button ;
-    /// </summary>
     public void OnLoadData() //for load saved screen
     {
         saveScreen.SetActive(true);

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class ShuffleButtonsInScrollView : MonoBehaviour
 {
-    public ScrollRect scrollView;
+   
     public RectTransform content;
 
     private void Start()

@@ -20,11 +20,10 @@ public class reloadScreen : MonoBehaviour
 
     public void ResetScene()
     
-    { 
+    {
+       
         _reLoad = true;
-        // Clear the saved GameMode value
-        // PlayerPrefs.DeleteKey("GameMode");
-        
+
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
         

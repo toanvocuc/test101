@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c77f4b35319f09245b467c34a8043722, type: 3}
-  m_Name: 157
+  m_Name: 3999
   m_EditorClassIdentifier: 
-  Id: 157
-  MearchAnimalName: FlyFisheep
-  Star: 5
-  Description: a fly fish with white hair.
-  MearchAnimalImage: {fileID: 21300000, guid: c864904ccb506b74c8856a471d25c75b, type: 3}
+  Id: 3999
+  MearchAnimalName: FallenAngle
+  Star: 8
+  Description: A angle Kill another angle and become a fallen one. all the angle
+    will now hunt it down.
+  MearchAnimalImage: {fileID: 21300000, guid: ab8dccb161a5506428f2aff503e8728b, type: 3}

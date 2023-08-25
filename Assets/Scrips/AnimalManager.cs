@@ -17,10 +17,10 @@ public class AnimalManager : MonoBehaviour
     public TMP_Text mAnimalDescription;
     public TMP_Text mAnimalname;
     
-     public Image chosenImage;
-     public Image secondImage;
-     public Image mearch3Image;
-     public Image thirtImage;
+    public Image chosenImage;
+    public Image secondImage;
+    public Image mearch3Image;
+    public Image thirtImage;
     
     public Button confirmButton;
     public Button resetButton;
@@ -31,7 +31,7 @@ public class AnimalManager : MonoBehaviour
   
     public Animator dadAnimator;
     public Animator momAnimator;
-   public Animator mearch3Animator;
+    public Animator mearch3Animator;
 
     public GameObject ScrollView;
     public GameObject StarHolder;
@@ -64,7 +64,7 @@ public class AnimalManager : MonoBehaviour
 
     }
 
-    public void AddAnimal()
+    public void AddAnimal() // game mode true :phase1-3/ game mod false phase 1-2-4-3
     {   _onClickNumber++;
         if (_chosenAnimal == null) return;
         _chosenOne.Add(_chosenAnimal);
@@ -77,6 +77,7 @@ public class AnimalManager : MonoBehaviour
                 
             chosenImage.sprite = _chosenAnimal.animalSprite;
             _chosenAnimal.gameObject.SetActive(false);
+            mAnimalname.text = "chose the mom";
         }
 
         if (_onClickNumber==2)
@@ -87,6 +88,7 @@ public class AnimalManager : MonoBehaviour
                 SoundManager.Instance.PlaySound("Phase3Music");
               
                 Phase3Tranfer();
+                // mAnimalname.text = "Generating:....";
                 CalculateSumOfIds();
                 Debug.Log("sum later:"+_sum);
                 FindIdMAnimal();
@@ -110,7 +112,7 @@ public class AnimalManager : MonoBehaviour
             mearch3Animator.Play("Mearch");
             dadAnimator.Play("mearch");
             momAnimator.Play("Fashe4Mearch");
-           Phase3Tranfer();
+            Phase3Tranfer();
         }
 
         if (_onClickNumber != 2 && _onClickNumber != 1) return;
@@ -141,8 +143,8 @@ public class AnimalManager : MonoBehaviour
     {   
         ScrollView.SetActive(false);
         confirmButton.gameObject.SetActive(false);
-       
-        
+
+      
         dadAnimator.Play("mearch");
         momAnimator.Play("Mearch");
                 
@@ -168,7 +170,7 @@ public class AnimalManager : MonoBehaviour
         backToMenu.gameObject.SetActive(true);
         resetButton.gameObject.SetActive(true);
         thirtImage.gameObject.SetActive(true);
-        mAnimalDescription.gameObject.SetActive((true));
+        mAnimalDescription.gameObject.SetActive(true);
         StarHolder.SetActive((true));
         starManager.AddStars();
     }
